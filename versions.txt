@@ -1,0 +1,4 @@
+hadoop=3.2.2
+hive=3.1.2
+spark=3.1.2
+scala=2.12

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file.
+NAMENODE -> core-site.xml
+RESOURCE MANGER -> mapperd-site.xml
+SECONDARYNAMENODE ->
+DATANODE -> slaves
+NODEMANGER -> slaves & yarn-site.xml -->
+
+<!-- https://stackoverflow.com/questions/40793850/meaning-of-fs-defaultfs-property-in-core-site-xml-in-hadoop 
+This is used to specify the default file system and defaults to your local file system that's why it needs be set to a HDFS address
+-->
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
