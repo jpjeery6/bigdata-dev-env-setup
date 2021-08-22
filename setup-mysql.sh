@@ -2,8 +2,8 @@
 set -e
 
 # https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
-#sudo apt update
-#sudo apt install -y mysql-server
+sudo apt update
+sudo apt install -y mysql-server
 mysql --version
 
 # get mysql connector for the mysql server
@@ -15,9 +15,9 @@ curl --progress-bar -L \
     "https://repo1.maven.org/maven2/mysql/mysql-connector-java/$MYSQL_VERSION/mysql-connector-java-$MYSQL_VERSION.jar" \
     --output "$INSTALL_DIR/opt/mysql-connector-java-$MYSQL_VERSION.jar"
 
-#sudo /etc/init.d/mysql start
-#sudo mysql_secure_installation # set password as root here
-#sudo mysql < ./setup_mysql_hive.sql
+# setup mysql installation. mandatory step for mysql security
+sudo /etc/init.d/mysql start
+sudo mysql_secure_installation # set root user password as 'root' here and others as no except reload table privilages
+sudo mysql < ./setup_mysql_hive.sql
 
-
-# #By default your hive user is APP and password is mine
+# By default your hive user is APP and password is mine. So we create this user in mysql

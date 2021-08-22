@@ -6,7 +6,10 @@ set -e
 sudo service mysql start
 #start spark
 ${SPARK_HOME}/sbin/start-master.sh
-${SPARK_HOME}/sbin/start-slave.sh spark://EPINHYDW0718.princeton.epam.com:7077
+
+master_address=$(curl -s http://localhost:8080 | grep -m1 'spark://' | grep -oP '(?<=at ).*?(?=</)')
+echo "master_address = $master_address"
+${SPARK_HOME}/sbin/start-slave.sh $master_address
 #start-all.sh
 #hiveserver2 &
 #nohup /path/to/your/script.sh > /dev/null 2>&1 &
