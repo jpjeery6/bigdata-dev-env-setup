@@ -15,10 +15,10 @@
 
     <property>
         <name>javax.jdo.option.ConnectionURL</name>
-        <value>jdbc:mysql://localhost/metastore_db?useSSL=false</value>
+        <value>jdbc:mysql://localhost/metastore_db?allowPublicKeyRetrieval=true</value>
     </property>
     <!-- jdbc:mysql://localhost/metastore?createDatabaseIfNotExist=true -->
-
+    <!-- jdbc:derby:;databaseName=metastore_db;create=true //correct format -->
     <property>
         <name>javax.jdo.option.ConnectionDriverName</name>
         <value>com.mysql.cj.jdbc.Driver</value>

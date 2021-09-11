@@ -68,7 +68,6 @@ It will use the below directories for package downloads, installation and data
 * Idea is to run as less daemons as possible - so hadoop services (yarn, hdfs) are not started, instead local file system is used.
 * Spark with Hive: Spark version 3.1.2 works with hive 3.1.2
 * Hive on Spark: Hive needs spark 2.3.3 to run on spark execution engine (doesn't work right now)
-* Item 3
 
 ## Execution
 

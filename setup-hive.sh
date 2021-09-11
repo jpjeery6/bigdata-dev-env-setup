@@ -54,7 +54,7 @@ echo "export JAVA_HOME=$JAVA_V" >> $HIVE_HOME/conf/hive-env.sh
 # cp ./hive_conf/hive-site.xml $HIVE_HOME/conf/hive-site.xml
 # rm ./hive_conf/hive-site.xml
 
-#schematool -dbType mysql -initSchema
+schematool -dbType mysql -initSchema
 #useSSL=false
 #autoReconnect=true
 

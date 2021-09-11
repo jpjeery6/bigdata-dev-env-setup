@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 printf "\n\nCleaning up...\n\n"
 
@@ -18,10 +18,10 @@ fi
 
 printf "\n\n\nStarting Full Setup...\n\n\n"
 . ./init.sh
-echo "Setting up Java..."
-. ./setup-java.sh
-echo "Setting up Mysql..."
-. ./setup-mysql.sh
+# echo "Setting up Java..."
+# . ./setup-java.sh
+# echo "Setting up Mysql..."
+# . ./setup-mysql.sh
 printf "\n\nSetting up hadoop...\n\n"
 . ./setup-hadoop.sh
 printf "\n\nSetting up hive...\n\n"
